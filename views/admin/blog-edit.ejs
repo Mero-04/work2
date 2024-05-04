@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Blog Add</title>
+    <link href="/admin/css/styles.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="layoutAuthentication">
+        <div id="layoutAuthentication_content">
+            <main>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-5">
+                            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                <div class="card-header">
+                                    <h3 class="text-center font-weight-light my-4">Dokument düzediş sahypasy <i
+                                            class="fas fa-edit"></i></h3>
+                                </div>
+                                <div class="card-body">
+                                    <form action="" method="post">
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" id="input" type="text" name="title"
+                                                placeholder="Add title" value="<%= blog.title %>" />
+                                            <label for="input">Sözbaşy</label>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" id="inputEmail" type="text" name="description"
+                                                placeholder="add descripton" value="<%= blog.description %>" />
+                                            <label for="inputEmail">Mazmuny</label>
+                                        </div>
+                                        <div class="d-flex justify-content-between" style="padding: 0px 75px;">
+                                            <button type="submit" class="btn btn-success">Ýatda saklamak</button>
+                                            <a href="/admin/blog" class="btn btn-danger">Yza gitmek</a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="/admin/js/scripts.js"></script>
+</body>
+
+</html>

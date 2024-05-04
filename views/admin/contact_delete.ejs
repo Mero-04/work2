@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+
+</head>
+<body>
+    
+  <div class="container">
+    <div class="card mt-5">
+      <div class="card-header">
+        <h3> Tertip belgisi: <%= contact.id %></h3>
+      </div>
+      <div class="card-body">
+        <h4> Siz hakykatdanam şu haty öçürmek isleyärsinizmi?</h4>
+        <p class="card-text">Ady: <%= contact.name %></p>
+        <p class="card-text">Haty: <%= contact.message %></p>
+        <form action="" method="post">
+          <button type="submit" class="btn btn-success">Howa</button>
+          <a href="/admin/contact" class="btn btn-danger">Yok</a>
+        </form>
+      </div>
+    </div>
+  </div>
+    
+    <script src="/assets/js/bootstrap.min.js"></script>
+
+</body>
+</html>

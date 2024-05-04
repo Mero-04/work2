@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Blog Add</title>
+    <link href="/admin/css/styles.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-light">
+    <div id="layoutAuthentication">
+        <div id="layoutAuthentication_content">
+            <main>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-5">
+                            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                <div class="card-header">
+                                    <h3 class="text-center font-weight-light my-4">Dokument döretmek sahypasy</h3>
+                                </div>
+                                <div class="card-body">
+                                    <form action="/admin/user-add" method="post" enctype="multipart/form-data">
+                                        
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" id="input" type="text" name="surname"
+                                                placeholder="Add title" />
+                                            <label for="input">Familýasy: </label>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" id="input" type="text" name="name"
+                                                placeholder="Add title" />
+                                            <label for="input">Ady: </label>
+                                        </div>
+                                    
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" id="input" type="text" name="email"
+                                                placeholder="Add title" />
+                                            <label for="input">Email: </label>
+                                        </div>
+                                    
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" id="input" type="text" name="birth"
+                                                placeholder="Add title" />
+                                            <label for="input">Doglan senesi: </label>
+                                        </div>
+                                    
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" id="input" type="text" name="duty"
+                                                placeholder="Add title" />
+                                            <label for="input">Wezipesi: </label>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" id="input" type="text" name="address"
+                                                placeholder="Add title" />
+                                            <label for="input">Salgysy: </label>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" id="input" type="text" name="password"
+                                                placeholder="Add title" />
+                                            <label for="input">Password: </label>
+                                        </div>
+                                    
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" id="input" type="file" name="user_img"
+                                                placeholder="add image" />
+                                            <label for="input">Suraty: </label>
+                                        </div>
+                                        <div class="d-flex justify-content-between" style="padding: 0px 75px;">
+                                            <button type="submit" class="btn btn-success">Ýatda saklamak</button>
+                                            <a href="/admin/users" class="btn btn-danger">Yza gitmek</a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="/admin/js/scripts.js"></script>
+</body>
+
+</html>

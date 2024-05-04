@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Message send</title>
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <form action="/user/message" method="post">
+                    <input type="hidden" name="send_user" value="<%= user.id %>">
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="input" type="text" name="subject" placeholder="Add title" />
+                        <label for="input">Familýasy: </label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="input" type="text" name="message" placeholder="Add title" />
+                        <label for="input">Ady: </label>
+                    </div>
+
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/assets/js/bootstrap.min.js"></script>
+</body>
+
+</html>
