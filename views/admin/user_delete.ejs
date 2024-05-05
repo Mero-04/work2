@@ -17,9 +17,21 @@
       Işgäri udalit etmek
     </div>
     <div class="card-body">
-      <h4> Siz hakykatdanam su işgäri spisokdan udalit etmek isleyarsinizmi?</h4>
-      <p class="card-text">Name: <%= user.surname %>
-      </p>
+      <h4> Siz hakykatdanam su ulanyjyny spisokdan udalit etmek isleyarsinizmi?</h4>
+      <div class="w-25 ">
+        <div class="d-flex justify-content-between align-items-center">
+          <h4>Familýasy: </h4>
+          <div>
+            <%= user.surname %>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+          <h4>Ady: </h4>
+          <div>
+            <%= user.name %>
+          </div>
+        </div>
+      </div>
       <form action="" method="post">
         <button type="submit" class="btn btn-success">Howa</button>
         <a href="/admin/users" class="btn btn-danger">Yok</a>

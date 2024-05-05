@@ -87,13 +87,13 @@ router.post("/user-add", imageUpload.upload.single("user_img"), async (req, res)
     }
 })
 
-// router.get("/user/:userId", async (req, res) => {
-//     const id = req.params.userId;
-//     const user = await User.findByPk(id)
-//     res.render("admin/user-single", {
-//         user: user
-//     })
-// })
+router.get("/user/:userId", async (req, res) => {
+    const id = req.params.userId;
+    const user = await User.findByPk(id)
+    res.render("admin/user-single", {
+        user: user
+    })
+})
 
 // router.post("/blog/edit/:blogId", async (req, res) => {
 //     const blog = await Blog.findByPk(req.params.blogId);
@@ -116,22 +116,22 @@ router.post("/user-add", imageUpload.upload.single("user_img"), async (req, res)
 //     })
 // })
 
-// router.get("/user/delete/:userId", async (req, res) => {
-//     const user = await User.findByPk(req.params.userId)
-//     res.render("admin/user_delete", {
-//         user: user
-//     })
-// })
+router.get("/user/delete/:userId", async (req, res) => {
+    const user = await User.findByPk(req.params.userId)
+    res.render("admin/user_delete", {
+        user: user
+    })
+})
 
-// router.post("/user/delete/:userId", async (req, res) => {
-//     const user = await User.findByPk(req.params.userId);
-//     if (user) {
-//         user.destroy();
-//         return res.redirect("/admin/users")
-//     } else {
-//         console.log("Işgär tapylmady")
-//     }
-// })
+router.post("/user/delete/:userId", async (req, res) => {
+    const user = await User.findByPk(req.params.userId);
+    if (user) {
+        user.destroy();
+        return res.redirect("/admin/users")
+    } else {
+        console.log("Işgär tapylmady")
+    }
+})
 
 
 

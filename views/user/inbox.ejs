@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Kadr</title>
+    <title>Chat</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="/admin/css/styles.css" rel="stylesheet" />
     <link rel="stylesheet" href="/admin/css/chat.css">
@@ -17,7 +17,7 @@
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3" href="/kadr">Maglumatlary işlemek</a>
+        <a class="navbar-brand ps-3" href="/kadr">Chat system</a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
                 class="fas fa-bars"></i></button>
@@ -54,7 +54,7 @@
                             <div class="col-md-4 bg-white ">
 
                                 <ul class="friend-list">
-                                    
+
                                     <li class="active bounceInDown">
                                         <a href="#" class="clearfix">
                                             <div class="friend-name" style="font-size: 24px;">
@@ -63,74 +63,29 @@
                                         </a>
                                     </li>
                                     <% ulanyjylar.forEach(ulanyjy=> { %>
-                                        
-                                        <% if (ulanyjy.id != userId) { %>
+
+                                        <% if (ulanyjy.id !=userId) { %>
                                             <li class="active bounceInDown">
                                                 <a href="/user/inbox/<%= ulanyjy.id %>" class="clearfix">
                                                     <img src="/uploads/user/<%= ulanyjy.user_img %>" alt=""
                                                         class="img-circle">
                                                     <div class="friend-name" style="font-size: 20px;">
-                                                        <strong><%= ulanyjy.name %></strong>
+                                                        <strong>
+                                                            <%= ulanyjy.name %>
+                                                        </strong>
                                                     </div>
                                                 </a>
                                             </li>
-                                        <% } %>
+                                            <% } %>
 
-                                        <% }) %>
+                                                <% }) %>
                                 </ul>
                             </div>
 
                             <!--=========================================================-->
                             <!-- selected chat -->
                             <div class="col-md-8 bg-white ">
-                                <div class="chat-message">
-                                    <ul class="chat">
-                                        <% messages.forEach(message => { %>
-                                            <li class="left clearfix">
-                                                <span class="chat-img pull-left">
-                                                    <img src="https://bootdey.com/img/Content/user_3.jpg" alt="User Avatar">
-                                                </span>
-                                                <div class="chat-body clearfix">
-                                                    <div class="header">
-                                                        <strong class="primary-font"><%= message.sender %></strong>
-                                                        <small class="pull-right text-muted"><i class="fa fa-clock-o"></i>
-                                                            12 mins ago</small>
-                                                    </div>
-                                                    <p>
-                                                        <%= message.message %>
-                                                    </p>
-                                                </div>
-                                            </li>
-                                        <% }) %>
-                                        
-                                       <% sender_messages.forEach(sender_message => { %>
-                                        <li class="right clearfix">
-                                            <span class="chat-img pull-right">
-                                                <img src="https://bootdey.com/img/Content/user_1.jpg" alt="User Avatar">
-                                            </span>
-                                            <div class="chat-body clearfix">
-                                                <div class="header">
-                                                    <strong class="primary-font"><%= sender_message.sender %></strong>
-                                                    <small class="pull-right text-muted"><i class="fa fa-clock-o"></i>
-                                                        13 mins ago</small>
-                                                </div>
-                                                <p>
-                                                    <%= sender_message.message %>
-                                                </p>
-                                            </div>
-                                        </li>
-                                       <% }) %>
-                                    </ul>
-                                </div>
-                                <div class="chat-box bg-white">
-                                    <div class="input-group">
-                                        <input class="form-control border no-shadow no-rounded"
-                                            placeholder="Type your message here">
-                                        <span class="input-group-btn">
-                                            <button class="btn btn-success no-rounded" type="button">Send</button>
-                                        </span>
-                                    </div><!-- /input-group -->
-                                </div>
+  
                             </div>
                         </div>
                     </div>

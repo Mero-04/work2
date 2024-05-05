@@ -17,7 +17,7 @@
 
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3" href="index.html">Maglumatlary işlemek</a>
+        <a class="navbar-brand ps-3" href="index.html">Chat system</a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
                 class="fas fa-bars"></i></button>
@@ -48,7 +48,7 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4 mb-4">Dokumentlar sahypasy</h1>
+                    <h1 class="mt-4 mb-4">Ulanyjylar sahypasy</h1>
 
                     <div class="card mb-4">
                         <div class="card-header d-flex justify-content-between align-items-center">
@@ -64,8 +64,8 @@
                                         <th>ID</th>
                                         <th>Familýasy</th>
                                         <th>Ady</th>
-                                        <th>Atasynyň ady</th>
-                                        <th>Tel No</th>
+                                        <th>Email</th>
+                                        <th>Password</th>
                                         <th>Doglan senesi</th>
                                         <th>Wezipesi</th>
                                         <th>Ýaşaýan ýeri</th>
@@ -86,10 +86,10 @@
                                                 <%= user.name %>
                                             </td>
                                             <td>
-                                                <%= user.ata_name %>
+                                                <%= user.email %>
                                             </td>
                                             <td>
-                                                <%= user.tel_nom %>
+                                                <%= user.password %>
                                             </td>
                                             <td>
                                                 <%= user.birth %>

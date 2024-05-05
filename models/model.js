@@ -72,10 +72,6 @@ const Message = sequelize.define("message", {
         primaryKey: true,
         allowNull: false
     },
-    subject: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
     message: {
         type: DataTypes.STRING,
         allowNull: false
@@ -85,6 +81,10 @@ const Message = sequelize.define("message", {
         allowNull: false
     },
     sender: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    created_at: {
         type: DataTypes.STRING,
         allowNull: false
     },

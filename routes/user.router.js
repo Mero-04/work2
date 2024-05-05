@@ -8,6 +8,7 @@ const bcrypt = require("bcrypt")
 const fs = require("fs")
 const isKadr = require("../middlewares/isKadr")
 const { Op } = require("sequelize")
+const moment = require("moment")
 
 
 router.get("/", async (req, res) => {
@@ -23,10 +24,11 @@ router.get("/", async (req, res) => {
 // });
 
 
-router.get("/users", async (req, res) => {
+router.get("/users", isKadr, async (req, res) => {
     const blogs = await User.findAll();
     res.render("user/users", {
-        bloglar: blogs
+        bloglar: blogs,
+        userId: req.session.userId
     })
 })
 
@@ -104,10 +106,9 @@ router.get("/inbox", isKadr, async (req, res) => {
     res.render("user/inbox", {
         ulanyjylar: users,
         userId: req.session.userId,
-        messages: message,
         sender_messages: sender_message,
         username: req.session.username,
-
+        sender_userId: req.params.userId,
     })
 })
 
@@ -116,21 +117,35 @@ router.get("/inbox/:userId", isKadr, async (req, res) => {
     const users = await User.findAll({});
     const message = await Message.findAll({
         include: { model: User },
-        where: { [Op.or]: [{ userId: req.params.userId }] }
-    })
-
-    const sender_message = await Message.findAll({
-        include: { model: User },
         where: {
-            [Op.or]: [{ userId: req.session.userId }]
+            // [Op.and]: [{ 
+            // send_user: req.params.userId,
+            // userId: req.session.userId }] 
+
+            [Op.or]: [
+                {
+                    [Op.and]: [{
+                        send_user: req.params.userId,
+                        userId: req.session.userId
+                    }]
+                },
+                {
+                    [Op.and]: [{
+                        send_user: req.session.userId,
+                        userId: req.params.userId
+                    }]
+                }
+            ]
+
         }
     })
-    res.render("user/inbox", {
+
+    res.render("user/inbox2", {
         ulanyjylar: users,
         userId: req.session.userId,
+        sender_userId: req.params.userId,
         username: req.session.username,
-        messages: message,
-        sender_messages: sender_message
+        messages: message
     })
 })
 
@@ -151,15 +166,14 @@ router.get("/message/:userId", isKadr, async (req, res) => {
 
 router.post("/message", isKadr, async (req, res) => {
     const id = req.params.userId;
-
     const message = await Message.create({
-        subject: req.body.subject,
         message: req.body.message,
         userId: req.body.send_user,
         send_user: req.session.userId,
-        sender: req.session.username
+        sender: req.session.username,
+        created_at: moment().locale("tk").format('LT')
     })
-    res.redirect("/user/users")
+    res.redirect("/user/inbox")
 
 })
 
