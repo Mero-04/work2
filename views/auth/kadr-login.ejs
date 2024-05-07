@@ -8,47 +8,52 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Login</title>
-    <link href="/admin/css/styles.css" rel="stylesheet" />
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="bg-dark">
-    <div id="layoutAuthentication">
-        <div id="layoutAuthentication_content">
-            <main>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-5">
-                            <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                <div class="card-header">
-                                    <h3 class="text-center font-weight-light my-4">GIRIŞ ETMEK</h3>
-                                </div>
-                                <div class="card-body">
-                                    <form action="/" method="post">
-                                        <div class="form-floating mb-3">
-                                            <input class="form-control" id="inputEmail" type="text" name="email"
-                                                placeholder="add email" />
-                                            <label for="inputEmail">E-poçta:</label>
-                                        </div>
-                                        <div class="form-floating mb-3">
-                                            <input class="form-control" id="inputEmail" type="password" name="password"
-                                                placeholder="add password" />
-                                            <label for="inputEmail">Açar sözi:</label>
-                                        </div>
-                                        
-                                        <div class="d-flex justify-content-center mt-3">
-                                            <button type="submit" class="btn btn-dark">Giriş etmek</button>
-                                        </div>
-                                    </form>
-                                </div>
+    <!-- Login 13 - Bootstrap Brain Component -->
+    <section class="bg-light py-3 py-md-5" style="margin-top: 200px;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
+                    <div class="card border border-light-subtle rounded-3 shadow-sm">
+                        <div class="card-body p-3 p-md-4 p-xl-5">
+                            <div class="text-center mb-3">
                             </div>
+                            <h2 class="fs-3 fw-normal text-center text-secondary mb-4">GIRIŞ ETMEK</h2>
+                            <form action="/" method="post">
+                                <div class="row gy-2 overflow-hidden">
+                                    <div class="col-12">
+                                        <div class="form-floating mb-3">
+                                            <input type="email" class="form-control" name="email" id="email"
+                                                placeholder="name@example.com" required>
+                                            <label for="email" class="form-label">Email: </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating mb-3">
+                                            <input type="password" class="form-control" name="password" id="password"
+                                                value="" placeholder="Password" required>
+                                            <label for="password" class="form-label">Açar sözi: </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="d-grid my-3">
+                                            <button class="btn btn-primary btn-lg" type="submit">Ulgama girmek</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
-            </main>
+            </div>
         </div>
+    </section>
 
-    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         crossorigin="anonymous"></script>
     <script src="/admin/js/scripts.js"></script>

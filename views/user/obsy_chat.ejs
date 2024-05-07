@@ -36,7 +36,7 @@
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
                     aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                    <li><a class="dropdown-item" href="/logout">Ulgamdan çyk</a></li>
                 </ul>
             </li>
         </ul>
@@ -48,46 +48,12 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4 mb-4">Chat sahypasy</h1>
+                    <h1 class="mt-4 mb-4">Umumy çat sahypasy</h1>
                     <div class="container-fluid bootstrap snippets bootdey">
                         <div class="row shadow-lg p-3">
-                            <div class="col-md-4 bg-white ">
-
-                                <ul class="friend-list">
-
-                                    <li class=" bounceInDown mb-4">
-                                        <a href="/user/inbox" class="clearfix">
-                                            <div class="friend-name" style="font-size: 20px;">
-                                                <strong>ULANYJYLAR:</strong>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <% ulanyjylar.forEach(ulanyjy=> { %>
-
-                                        <% if (ulanyjy.id !=userId) { %>
-                                            <li class=" <% if (sender_userId == ulanyjy.id) { %>
-                                                active
-                                            <% } %> bounceInDown">
-                                                <a href="/user/inbox/<%= ulanyjy.id %>" class="clearfix">
-                                                    <img src="/uploads/user/<%= ulanyjy.user_img %>" alt=""
-                                                        class="img-circle">
-                                                    <div class="friend-name" style="font-size: 20px;">
-                                                        <strong>
-                                                            <%= ulanyjy.name %>
-                                                                <%= ulanyjy.surname %>
-                                                        </strong>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <% } %>
-
-                                                <% }) %>
-                                </ul>
-                            </div>
-
                             <!--=========================================================-->
                             <!-- selected chat -->
-                            <div class="col-md-8 bg-white ">
+                            <div class="col-md-12 bg-white ">
                                 <div class="chat-message">
                                     <ul class="chat">
                                         <% messages.forEach(message=> { %>
@@ -103,8 +69,8 @@
                                                                 <%= message.created_at %>
                                                             </small>
                                                         </div>
-                                                        <% if (message.send_user==userId) { %>
-                                                            <form action="/user/message/delete/<%= message.id %>"
+                                                        <% if (message.userId==userId) { %>
+                                                            <form action="/user/umumy_chat/message/delete/<%= message.id %>"
                                                                 method="post">
                                                                 <div class="d-flex justify-content-between mx-5 ">
                                                                     <button type="submit"
@@ -138,8 +104,7 @@
                                     </ul>
                                 </div>
                                 <div class="chat-box bg-white ">
-                                    <form action="/user/message" method="post" enctype="multipart/form-data">
-                                        <input type="hidden" name="send_user" value="<%= sender_userId %>">
+                                    <form action="/user/umumy_chat/message" method="post" enctype="multipart/form-data">
 
                                         <div class="input-group w-25  mb-4 d-flex justify-content-end">
                                             <input class="form-control " placeholder="File girizin" type="file"

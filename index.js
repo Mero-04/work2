@@ -28,13 +28,13 @@ app.use(session({
 
 
 
-const HomeRouter = require("./routes/home.router")
+
 const AdminRouter = require("./routes/admin.router")
 const AuthRouter = require("./routes/auth.router");
 const UserRouter = require("./routes/user.router");
 
 
-// app.use("/", HomeRouter)
+
 app.use("/admin", AdminRouter)
 app.use("/user", UserRouter)
 app.use("/", AuthRouter)

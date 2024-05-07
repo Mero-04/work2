@@ -36,7 +36,7 @@
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
                     aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                    <li><a class="dropdown-item" href="/logout">Ulgamdan çykmak</a></li>
                 </ul>
             </li>
         </ul>
@@ -49,23 +49,25 @@
             <main>
                 <div class="container-fluid px-4">
                     <h1 class="mt-4 mb-4">Chat sahypasy</h1>
-                    <div class="container bootstrap snippets bootdey">
+                    <div class="container-fluid bootstrap snippets bootdey">
                         <div class="row shadow-lg p-3">
                             <div class="col-md-4 bg-white ">
 
                                 <ul class="friend-list">
 
-                                    <li class="active bounceInDown">
-                                        <a href="#" class="clearfix">
-                                            <div class="friend-name" style="font-size: 24px;">
-                                                <strong>Ulanyjylar</strong>
+                                    <li class=" bounceInDown mb-4">
+                                        <a href="/user/inbox" class="clearfix">
+                                            <div class="friend-name" style="font-size: 20px;">
+                                                <strong>ULANYJYLAR:</strong>
                                             </div>
                                         </a>
                                     </li>
                                     <% ulanyjylar.forEach(ulanyjy=> { %>
 
                                         <% if (ulanyjy.id !=userId) { %>
-                                            <li class="active bounceInDown">
+                                            <li class=" <% if (sender_userId == ulanyjy.id) { %>
+                                                active
+                                            <% } %> bounceInDown  ">
                                                 <a href="/user/inbox/<%= ulanyjy.id %>" class="clearfix">
                                                     <img src="/uploads/user/<%= ulanyjy.user_img %>" alt=""
                                                         class="img-circle">
@@ -97,12 +99,7 @@
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">
                     <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Your Website 2023</div>
-                        <div>
-                            <a href="#">Privacy Policy</a>
-                            &middot;
-                            <a href="#">Terms &amp; Conditions</a>
-                        </div>
+                        <div class="text-muted">Ähli hukuklar goralan &copy; Website_name 2024</div>
                     </div>
                 </div>
             </footer>

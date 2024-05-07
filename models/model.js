@@ -84,14 +84,46 @@ const Message = sequelize.define("message", {
         type: DataTypes.STRING,
         allowNull: false
     },
+    file: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
     created_at: {
         type: DataTypes.STRING,
         allowNull: false
     },
 });
 
-User.hasMany(Message)
+const Group_chat = sequelize.define("group_chat", {
+    id: {
+        type: DataTypes.INTEGER(10),
+        autoIncrement: true,
+        primaryKey: true,
+        allowNull: false
+    },
+    message: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    sender: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    file: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+    created_at: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+});
+
+User.hasMany(Message, { onDelete: "cascade", onUpdate: "cascade" })
 Message.belongsTo(User)
+
+User.hasMany(Group_chat, { onDelete: "cascade", onUpdate: "cascade" })
+Group_chat.belongsTo(User)
 
 
 
@@ -101,5 +133,6 @@ Admin.findOrCreate({ where: { email: "admin@gmail.com", password: "$2b$10$ppLSj0
 module.exports = {
     Admin,
     User,
-    Message
+    Message,
+    Group_chat
 };
